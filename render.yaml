@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: dance-schedule-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SESSION_SECRET_KEY
+        value: your_secret_key_here
